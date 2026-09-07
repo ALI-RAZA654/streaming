@@ -39,18 +39,18 @@ export const AnimeRow: React.FC<AnimeRowProps> = ({
       {/* Header */}
       <div className="flex items-end justify-between mb-5 px-4 sm:px-6 lg:px-8">
         <div>
-          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-3">
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-3">
             <span className="w-1.5 h-6 rounded-full bg-gradient-to-b from-indigo-500 via-purple-500 to-cyan-400 inline-block shadow-md shadow-indigo-500/50" />
             {title}
           </h2>
-          {subtitle && <p className="text-xs sm:text-sm text-slate-400 mt-1">{subtitle}</p>}
+          {subtitle && <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">{subtitle}</p>}
         </div>
 
         <div className="flex items-center gap-3">
           {viewAllHref && (
             <Link
               href={viewAllHref}
-              className="text-xs sm:text-sm font-bold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 transition-colors mr-2 group"
+              className="text-xs sm:text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 flex items-center gap-1 transition-colors mr-2 group"
             >
               See All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -59,14 +59,14 @@ export const AnimeRow: React.FC<AnimeRowProps> = ({
           <div className="flex items-center gap-1.5">
             <button
               onClick={() => handleScroll('left')}
-              className="p-2 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/70 transition-all shadow-md active:scale-95"
+              className="p-2 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/70 transition-all shadow-md active:scale-95"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => handleScroll('right')}
-              className="p-2 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/70 transition-all shadow-md active:scale-95"
+              className="p-2 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/70 transition-all shadow-md active:scale-95"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-4 h-4" />

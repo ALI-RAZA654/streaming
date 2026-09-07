@@ -1,20 +1,20 @@
 import { Anime, UserProfile, WatchHistoryItem } from './types';
 
-// High quality themed images for posters & banners
+// High quality themed anime artwork images for posters & banners
 const IMAGES = {
-  cyberpunkPoster: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=800&auto=format&fit=crop',
+  cyberpunkPoster: '/images/poster-cyberpunk.png',
   cyberpunkBanner: '/images/banner-cyberpunk.png',
-  fantasyPoster: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop',
+  fantasyPoster: '/images/poster-magic.png',
   fantasyBanner: '/images/banner-4.png',
-  spacePoster: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
+  spacePoster: '/images/poster-space.png',
   spaceBanner: '/images/banner-mecha.png',
-  samuraiPoster: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop',
+  samuraiPoster: '/images/poster-samurai.png',
   samuraiBanner: '/images/banner-1.png',
-  mechaPoster: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=800&auto=format&fit=crop',
+  mechaPoster: '/images/poster-mecha.png',
   mechaBanner: '/images/banner-mecha.png',
-  magicPoster: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?q=80&w=800&auto=format&fit=crop',
+  magicPoster: '/images/poster-magic.png',
   magicBanner: '/images/banner-4.png',
-  moviePoster: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800&auto=format&fit=crop',
+  moviePoster: '/images/poster-space.png',
   movieBanner: '/images/banner-cyberpunk.png',
   sampleVideo: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
 };

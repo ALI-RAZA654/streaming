@@ -84,8 +84,8 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-slate-950/90 shadow-2xl backdrop-blur-xl border-b border-slate-800/80 py-3'
-            : 'bg-gradient-to-b from-slate-950/95 via-slate-950/60 to-transparent py-4 sm:py-5'
+            ? 'bg-white/95 dark:bg-slate-950/90 shadow-2xl backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800/80 py-3 text-slate-900 dark:text-white'
+            : 'bg-gradient-to-b from-white/90 via-white/50 to-transparent dark:from-slate-950/95 dark:via-slate-950/60 dark:to-transparent py-4 sm:py-5 text-slate-900 dark:text-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -107,21 +107,21 @@ export const Navbar: React.FC = () => {
 
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="font-black text-xl tracking-wider text-white">
-                  SEKKAI<span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.5)]">ICHI</span>
+                <span className="font-black text-xl tracking-wider text-slate-900 dark:text-white">
+                  SEKKAI<span className="text-emerald-500 dark:text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.5)]">ICHI</span>
                 </span>
                 <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-indigo-600 text-white tracking-widest hidden sm:inline-block">
                   STREAM
                 </span>
               </div>
-              <span className="text-[10px] text-slate-400 tracking-wide hidden sm:block">
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 tracking-wide hidden sm:block">
                 HD Anime & Movie Network
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links with Icons */}
-          <nav className="hidden md:flex items-center gap-1.5 bg-slate-900/60 p-1.5 rounded-2xl border border-slate-800/80 backdrop-blur-xl shadow-xl">
+          <nav className="hidden md:flex items-center gap-1.5 bg-slate-100/90 dark:bg-slate-900/60 p-1.5 rounded-2xl border border-slate-200/90 dark:border-slate-800/80 backdrop-blur-xl shadow-xl">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive =
@@ -135,10 +135,10 @@ export const Navbar: React.FC = () => {
                   className={`flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
                     isActive
                       ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/80 dark:hover:bg-slate-800/70'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-indigo-400'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-indigo-500 dark:text-indigo-400'}`} />
                   <span>{link.name}</span>
                 </Link>
               );
@@ -150,12 +150,12 @@ export const Navbar: React.FC = () => {
             {/* Search Trigger */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 transition-all text-xs font-medium backdrop-blur-md shadow-md"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/60 transition-all text-xs font-medium backdrop-blur-md shadow-md"
               title="Search Anime & Movies"
             >
-              <Search className="w-4 h-4 text-indigo-400" />
+              <Search className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
               <span className="hidden sm:inline">Search...</span>
-              <kbd className="hidden lg:inline-block text-[10px] bg-slate-800 px-1.5 py-0.5 rounded text-slate-400 border border-slate-700">
+              <kbd className="hidden lg:inline-block text-[10px] bg-slate-200 dark:bg-slate-800 px-1.5 py-0.5 rounded text-slate-500 dark:text-slate-400 border border-slate-300 dark:border-slate-700">
                 ⌘K
               </kbd>
             </button>
@@ -164,13 +164,13 @@ export const Navbar: React.FC = () => {
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2.5 rounded-xl bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 transition-transform duration-300 shadow-md"
-                title="Toggle Theme"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/60 transition-transform duration-300 shadow-md active:scale-95"
+                title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
               >
                 {theme === 'dark' ? (
                   <Sun className="w-4 h-4 text-amber-400" />
                 ) : (
-                  <Moon className="w-4 h-4 text-indigo-400" />
+                  <Moon className="w-4 h-4 text-indigo-600" />
                 )}
               </button>
             )}
@@ -195,54 +195,54 @@ export const Navbar: React.FC = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute right-0 mt-3 w-60 rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl p-2 z-50 text-slate-200"
+                    className="absolute right-0 mt-3 w-60 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-2 z-50 text-slate-800 dark:text-slate-200"
                   >
-                    <div className="px-3 py-2 border-b border-slate-800 mb-1">
-                      <p className="font-bold text-sm text-white">{MOCK_USER.name}</p>
-                      <p className="text-xs text-emerald-400 font-medium">VIP Streamer • Lv. {MOCK_USER.level}</p>
+                    <div className="px-3 py-2 border-b border-slate-200 dark:border-slate-800 mb-1">
+                      <p className="font-bold text-sm text-slate-900 dark:text-white">{MOCK_USER.name}</p>
+                      <p className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">VIP Streamer • Lv. {MOCK_USER.level}</p>
                     </div>
 
                     <Link
                       href="/profile"
                       onClick={() => setProfileDropdownOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                     >
-                      <User className="w-4 h-4 text-indigo-400" />
+                      <User className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
                       <span>Profile & Stats</span>
                     </Link>
 
                     <Link
                       href="/watchlist"
                       onClick={() => setProfileDropdownOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                     >
-                      <Bookmark className="w-4 h-4 text-purple-400" />
+                      <Bookmark className="w-4 h-4 text-purple-500 dark:text-purple-400" />
                       <span>My Watchlist</span>
                     </Link>
 
                     <Link
                       href="/favorites"
                       onClick={() => setProfileDropdownOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                     >
-                      <Heart className="w-4 h-4 text-rose-400" />
+                      <Heart className="w-4 h-4 text-rose-500 dark:text-rose-400" />
                       <span>Favorites</span>
                     </Link>
 
                     <Link
                       href="/history"
                       onClick={() => setProfileDropdownOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                     >
-                      <History className="w-4 h-4 text-cyan-400" />
+                      <History className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
                       <span>Watch History</span>
                     </Link>
 
-                    <div className="border-t border-slate-800 my-1 pt-1">
+                    <div className="border-t border-slate-200 dark:border-slate-800 my-1 pt-1">
                       <Link
                         href="/login"
                         onClick={() => setProfileDropdownOpen(false)}
-                        className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-rose-500/10 text-rose-400 transition-colors"
+                        className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-xl hover:bg-rose-500/10 text-rose-500 dark:text-rose-400 transition-colors"
                       >
                         <LogOut className="w-4 h-4" />
                         <span>Sign Out</span>
@@ -256,7 +256,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile menu trigger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white border border-slate-800"
+              className="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

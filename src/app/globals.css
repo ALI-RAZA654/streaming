@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --bg-main: #ffffff;
-  --bg-card: #f8fafc;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
   --bg-hover: #f1f5f9;
   --text-main: #0f172a;
   --text-muted: #64748b;

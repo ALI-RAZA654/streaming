@@ -31,12 +31,12 @@ export default function HomePage() {
 
       {/* Category Pills Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 relative z-30">
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none py-2 px-1 bg-slate-900/60 p-2 rounded-2xl border border-slate-800/80 backdrop-blur-xl shadow-2xl">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none py-2 px-1 bg-white/80 dark:bg-slate-900/60 p-2 rounded-2xl border border-slate-200 dark:border-slate-800/80 backdrop-blur-xl shadow-xl">
           {categories.map((cat) => (
             <Link
               key={cat.label}
               href={cat.href}
-              className="px-4 py-2.5 rounded-xl bg-slate-950/80 hover:bg-indigo-600 text-slate-300 hover:text-white border border-slate-800 hover:border-indigo-500 text-xs font-extrabold whitespace-nowrap transition-all duration-200 shadow-md hover:scale-105"
+              className="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-950/80 hover:bg-indigo-600 dark:hover:bg-indigo-600 text-slate-700 dark:text-slate-300 hover:text-white dark:hover:text-white border border-slate-200 dark:border-slate-800 hover:border-indigo-500 text-xs font-extrabold whitespace-nowrap transition-all duration-200 shadow-sm hover:scale-105"
             >
               {cat.label}
             </Link>
@@ -46,44 +46,44 @@ export default function HomePage() {
 
       {/* Highlights & Features Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-3xl bg-slate-900/80 border border-slate-800/90 backdrop-blur-xl shadow-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800/90 backdrop-blur-xl shadow-xl">
           <div className="flex items-center gap-3 p-2">
-            <div className="p-3 rounded-2xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30">
+            <div className="p-3 rounded-2xl bg-indigo-600/10 dark:bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 border border-indigo-500/30">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-[11px] text-slate-400 font-medium">Stream Quality</p>
-              <p className="text-sm font-bold text-white">1080p Ultra HD</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Stream Quality</p>
+              <p className="text-sm font-bold text-slate-900 dark:text-white">1080p Ultra HD</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 p-2">
-            <div className="p-3 rounded-2xl bg-purple-600/20 text-purple-400 border border-purple-500/30">
+            <div className="p-3 rounded-2xl bg-purple-600/10 dark:bg-purple-600/20 text-purple-600 dark:text-purple-400 border border-purple-500/30">
               <Zap className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-[11px] text-slate-400 font-medium">Fast Simulcast</p>
-              <p className="text-sm font-bold text-white">1hr After Japan</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Fast Simulcast</p>
+              <p className="text-sm font-bold text-slate-900 dark:text-white">1hr After Japan</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 p-2">
-            <div className="p-3 rounded-2xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30">
+            <div className="p-3 rounded-2xl bg-emerald-600/10 dark:bg-emerald-600/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
               <Tv className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-[11px] text-slate-400 font-medium">Multi-Audio</p>
-              <p className="text-sm font-bold text-white">Subbed & Dubbed</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Multi-Audio</p>
+              <p className="text-sm font-bold text-slate-900 dark:text-white">Subbed & Dubbed</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 p-2">
-            <div className="p-3 rounded-2xl bg-rose-600/20 text-rose-400 border border-rose-500/30">
+            <div className="p-3 rounded-2xl bg-rose-600/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-400 border border-rose-500/30">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-[11px] text-slate-400 font-medium">VIP Premium</p>
-              <p className="text-sm font-bold text-white">Zero Advertisements</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">VIP Premium</p>
+              <p className="text-sm font-bold text-slate-900 dark:text-white">Zero Advertisements</p>
             </div>
           </div>
         </div>
@@ -93,12 +93,12 @@ export default function HomePage() {
       {MOCK_HISTORY.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-extrabold text-white flex items-center gap-2">
-              <Clock className="w-5 h-5 text-indigo-400" /> Continue Watching
+            <h2 className="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+              <Clock className="w-5 h-5 text-indigo-600 dark:text-indigo-400" /> Continue Watching
             </h2>
             <Link
               href="/history"
-              className="text-xs font-bold text-indigo-400 hover:text-indigo-300"
+              className="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
             >
               Watch History →
             </Link>
@@ -113,7 +113,7 @@ export default function HomePage() {
               return (
                 <div
                   key={item.anime.id}
-                  className="group relative flex gap-3 p-3 rounded-2xl bg-slate-900/80 border border-slate-800/80 hover:border-indigo-500/50 backdrop-blur-md shadow-xl transition-all"
+                  className="group relative flex gap-3 p-3 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800/80 hover:border-indigo-500/50 backdrop-blur-md shadow-md dark:shadow-xl transition-all"
                 >
                   <div className="relative w-28 aspect-video rounded-xl overflow-hidden bg-slate-950 flex-shrink-0">
                     <Image
@@ -141,19 +141,19 @@ export default function HomePage() {
 
                   <div className="flex flex-col justify-between flex-1 min-w-0">
                     <div>
-                      <h4 className="text-sm font-bold text-white truncate group-hover:text-indigo-300">
+                      <h4 className="text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-indigo-600 dark:group-hover:text-indigo-300">
                         {item.anime.title}
                       </h4>
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                         Ep {item.episode.number}: {item.episode.title}
                       </p>
                     </div>
 
-                    <div className="flex items-center justify-between text-[11px] text-slate-400">
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
                       <span>{progressPercent}% watched</span>
                       <Link
                         href={`/watch/${item.anime.slug}/${item.episode.number}`}
-                        className="font-bold text-indigo-400 hover:underline"
+                        className="font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
                       >
                         Resume →
                       </Link>

@@ -48,7 +48,7 @@ export const AnimeCard: React.FC<AnimeCardProps> = ({ anime, priority = false, r
     <motion.div
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
-      className="group relative flex flex-col rounded-2xl bg-slate-900/80 border border-slate-800/90 overflow-hidden shadow-xl hover:shadow-[0_8px_30px_rgba(99,102,241,0.25)] hover:border-indigo-500/50 transition-all duration-300"
+      className="group relative flex flex-col rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800/90 overflow-hidden shadow-md hover:shadow-2xl hover:shadow-indigo-500/20 hover:border-indigo-500/50 transition-all duration-300"
     >
       {/* Poster Image Container */}
       <Link href={`/anime/${anime.slug}`} className="relative aspect-[3/4] w-full overflow-hidden bg-slate-950">
@@ -134,19 +134,19 @@ export const AnimeCard: React.FC<AnimeCardProps> = ({ anime, priority = false, r
       </Link>
 
       {/* Footer Info */}
-      <div className="p-3.5 flex flex-col gap-1.5 flex-1 justify-between bg-slate-900/60">
+      <div className="p-3.5 flex flex-col gap-1.5 flex-1 justify-between bg-slate-50/80 dark:bg-slate-900/60">
         <div>
           <Link href={`/anime/${anime.slug}`}>
-            <h3 className="font-bold text-sm text-white line-clamp-1 group-hover:text-indigo-400 transition-colors">
+            <h3 className="font-bold text-sm text-slate-900 dark:text-white line-clamp-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
               {anime.title}
             </h3>
           </Link>
-          <div className="flex items-center gap-2 text-xs text-slate-400 mt-1">
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
             <span>{anime.releasedYear}</span>
             <span>•</span>
             <span>{anime.episodesCount > 1 ? `${anime.episodesCount} Eps` : 'Movie'}</span>
             <span>•</span>
-            <span className="text-slate-300 font-medium truncate">{anime.studio}</span>
+            <span className="text-slate-700 dark:text-slate-300 font-medium truncate">{anime.studio}</span>
           </div>
         </div>
 
@@ -155,7 +155,7 @@ export const AnimeCard: React.FC<AnimeCardProps> = ({ anime, priority = false, r
           {anime.genres.slice(0, 2).map((g) => (
             <span
               key={g}
-              className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50"
+              className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-200/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-300/50 dark:border-slate-700/50"
             >
               {g}
             </span>

@@ -196,53 +196,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ animes }) => {
             </motion.div>
           </div>
 
-          {/* Right Side Poster Spotlight Card (Desktop Streaming Touch) */}
-          <motion.div
-            key={`poster-${current.id}`}
-            initial={{ opacity: 0, scale: 0.9, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:flex items-center gap-4 p-3.5 rounded-3xl bg-slate-900/80 border border-slate-800/90 backdrop-blur-xl shadow-2xl hover:border-indigo-500/50 transition-all duration-300 group/poster max-w-xs"
-          >
-            <div className="relative w-28 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-slate-700/60 flex-shrink-0">
-              <Image
-                src={current.posterImage}
-                alt={current.title}
-                fill
-                className="object-cover group-hover/poster:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/poster:opacity-100 transition-opacity flex items-center justify-center">
-                <Link
-                  href={`/watch/${current.slug}/1`}
-                  className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg"
-                >
-                  <Play className="w-4 h-4 fill-white translate-x-0.5" />
-                </Link>
-              </div>
-            </div>
 
-            <div className="flex flex-col justify-between py-1 space-y-2">
-              <div>
-                <span className="text-[10px] font-bold tracking-wider uppercase text-indigo-400 bg-indigo-950/80 px-2 py-0.5 rounded-md border border-indigo-800/50">
-                  FEATURED PICK
-                </span>
-                <h4 className="text-sm font-bold text-white line-clamp-2 mt-1 group-hover/poster:text-indigo-300 transition-colors">
-                  {current.title}
-                </h4>
-              </div>
-
-              <div className="space-y-1">
-                <div className="flex items-center gap-1 text-xs text-amber-400 font-semibold">
-                  <Star className="w-3.5 h-3.5 fill-amber-400" />
-                  <span>{current.rating}</span>
-                  <span className="text-slate-500 font-normal">({(current.scoreCount / 1000).toFixed(0)}k)</span>
-                </div>
-                <div className="text-[11px] text-slate-400">
-                  {current.episodesCount} Episodes • {current.releasedYear}
-                </div>
-              </div>
-            </div>
-          </motion.div>
 
         </div>
       </div>
