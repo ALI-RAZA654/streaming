@@ -60,6 +60,7 @@ export default function WatchPage({
             videoUrl={currentEpisode.videoUrl}
             title={`${anime.title} - ${currentEpisode.title}`}
             episodeNumber={epNum}
+            anilistId={16498}
             onNextEpisode={handleNextEpisode}
             onPrevEpisode={handlePrevEpisode}
             hasNextEpisode={epNum < anime.episodes.length}
